@@ -1,0 +1,100 @@
+.footer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: 20px;
+  padding: 16px 27px;
+
+  background: #fff;
+  border-radius: 9px;
+
+  color: #504f51;
+}
+
+.footer span {
+  color: #a0a0a0;
+}
+
+.footer .filters {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  min-width: 215px;
+  min-height: 20px;
+}
+
+.footer .filters li button {
+  height: 25px;
+  padding: 3px 7px;
+
+  font: inherit;
+  text-decoration: none;
+  -moz-text-decoration-style: none;
+  -webkit-text-decoration-style: none;
+  color: #a0a0a0;
+
+  background-color: transparent;
+  border-radius: 3px;
+  border: none;
+
+  cursor: pointer;
+}
+
+.footer .clearCompleted {
+  height: 100%;
+  margin-left: 27px;
+  margin-bottom: 4px;
+
+  font-family: inherit;
+  font-weight: inherit;
+  font-size: 15px;
+  color: #a0a0a0;
+
+  border: none;
+  background: none;
+
+  border: none;
+  background: none;
+
+  cursor: pointer;
+}
+
+.footer .filters .current-link {
+  border: 2px solid rgba(175, 47, 47, 0.2);
+}
+
+@media (max-width: 550px) {
+  .footer span,
+  .footer .clearCompleted,
+  .footer .filters {
+    font-size: 12px;
+  }
+
+  .footer span {
+    min-width: 69px;
+  }
+
+  .footer .clearCompleted {
+    min-width: 119px;
+
+    white-space: nowrap;
+  }
+
+  .footer {
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 0px;
+
+    background: none;
+  }
+
+  .footer .filters {
+    justify-content: center;
+
+    min-width: 119px;
+  }
+
+  .todoList li .div .deleteBtn {
+    right: 40px;
+  }
+}
