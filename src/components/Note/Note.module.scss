@@ -1,0 +1,86 @@
+.root {
+  position: relative;
+
+  width: 86%;
+  padding: 16px 16px 16px 60px;
+
+  font-family: inherit;
+  font-weight: inherit;
+  font-style: italic;
+  word-break: break-all;
+
+  background: #fff;
+  border-radius: 10px;
+  border: 1px solid rgba(175, 47, 47, 0.15);
+}
+
+li:hover {
+  .deleteBtn {
+    opacity: 1;
+  }
+}
+  
+  
+
+.toggle {
+  position: absolute;
+  left: 10px;
+
+  width: 30px;
+  height: 16px;
+  
+  outline: none;
+}
+
+.deleteBtn {
+  position: absolute;
+  top: 0;
+  right: 10px;
+  bottom: 0;
+
+  width: 27px;
+  height: 27px;
+  margin: auto 0;
+  margin-bottom: 11px;
+
+  background: url("../../../public/images/removeBtn.png");
+  background-size: cover;
+  border: none;
+  opacity: -1;
+
+  cursor: pointer;
+}
+
+.edit {
+  min-width: 100%;
+  min-height: 100%;
+
+  font-family: inherit;
+  font-weight: inherit;
+  font-style: italic;
+  font-size: 20px;
+
+  outline: none;
+  border: none;
+}
+
+.edit:focus {
+  border-bottom: 2px solid rgba(175, 47, 47, 0.15);;
+}
+
+.completed {
+  text-decoration: line-through;
+  color: lightgrey;
+}
+
+.label {
+  cursor: default;
+}
+
+.div {
+  display: flex;
+  align-items: center;
+  min-height: 30px;
+
+  font-size: 20px;
+}

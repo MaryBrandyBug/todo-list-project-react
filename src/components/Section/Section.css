@@ -3,7 +3,7 @@
   padding: 0;
 }
 
-.todoList li {
+/* .todoList li {
   position: relative;
 
   width: 86%;
@@ -17,15 +17,15 @@
   background: #fff;
   border-radius: 10px;
   border: 1px solid rgba(175, 47, 47, 0.15);
-}
+} */
 
-.todoList li .toggle {
+/* .todoList li .toggle {
   width: 40px;
   margin-left: -50px;
   outline: none;
-}
+} */
 
-.todoList li .div .deleteBtn {
+/* .todoList li .div .deleteBtn {
   position: absolute;
   top: 0;
   right: 10px;
@@ -42,13 +42,13 @@
   opacity: -1;
 
   cursor: pointer;
-}
+} */
 
-li:hover .div .deleteBtn {
+/* li:hover .div .deleteBtn {
   opacity: 1;
-}
+} */
 
-li .edit {
+/* li .edit {
   min-width: 100%;
   min-height: 100%;
 
@@ -58,16 +58,16 @@ li .edit {
 
   outline: none;
   border: none;
-}
+} */
 
-li .edit:focus {
+/* li .edit:focus {
   border: none;
-}
+} */
 
-.todoList .completed {
+/* .todoList .completed {
   text-decoration: line-through;
   color: lightgrey;
-}
+} */
 
 .toggleAll {
   position: absolute;

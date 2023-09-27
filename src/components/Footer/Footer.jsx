@@ -1,9 +1,9 @@
 import React from 'react';
-import './Footer.css';
 import { useDispatch, useSelector } from 'react-redux';
+import cx from 'classnames';
+import s from './Footer.module.scss';
 import data from './data';
 import { changeFilter, clearAllCompleted } from '../../store/slicer/todoSlicer';
-import activeClass from './utils';
 
 export default function Footer() {
   const dispatch = useDispatch();
@@ -33,7 +33,7 @@ export default function Footer() {
   };
 
   const buttons = data.map((item) => (
-    <li className={activeClass(item.id, filter)} key={item.text.length}>
+    <li className={cx({ [s.currentLink]: item.id === filter })} key={item.text.length}>
       <button type="button" onClick={() => changeActive(item.id)}>
         {item.text}
       </button>
@@ -41,17 +41,17 @@ export default function Footer() {
   ));
 
   return (
-    <footer className="footer">
-      <span className="needToDo">
+    <footer className={s.footer}>
+      <span className={s.needToDo}>
         <strong>{itemsLeftNumber}</strong>
         {' '}
         items left
       </span>
-      <ul className="filters">{buttons}</ul>
+      <ul className={s.filters}>{buttons}</ul>
       {itemsDone ? (
         <button
           type="button"
-          className="clearCompleted"
+          className={s.clearCompleted}
           onClick={clearCompleted}
         >
           Clear completed
