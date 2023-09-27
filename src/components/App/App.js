@@ -1,10 +1,10 @@
-import './App.css';
+import './App.scss';
 import Header from '../Header';
 import Section from '../Section';
 
 function App() {
   return (
-    <div className="container">
+    <div className="wrapper">
       <Header />
       <Section />
     </div>

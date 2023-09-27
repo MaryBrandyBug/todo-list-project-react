@@ -1,3 +1,5 @@
+@import './colors.scss';
+
 body {
   display: block;
   min-width: 230px;
@@ -7,5 +9,5 @@ body {
   font-weight: 300;
   font-family: "Raleway", sans-serif;
 
-  background: #f5f5f5;
+  background-color: $grayColor;
 }

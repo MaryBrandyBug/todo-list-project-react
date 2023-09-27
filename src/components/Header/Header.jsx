@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { checkLength } from '../../modules/utils/utils';
-import './Header.css';
+import s from './Header.module.scss';
 import { addTodo } from '../../store/slicer/todoSlicer';
 
 export default function Header() {
@@ -34,15 +34,15 @@ export default function Header() {
   };
 
   return (
-    <header className="header">
-      <h1>todos</h1>
+    <header className={s.root}>
+      <h1 className={s.header}>todos</h1>
       <input
         type="text"
         value={newNote}
         onChange={handleInput}
         onKeyDown={adding}
         name="note"
-        className="newNote"
+        className={s.newNote}
         placeholder="What needs to be done?"
         autoFocus
       />
