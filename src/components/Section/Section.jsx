@@ -1,6 +1,6 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import './Section.css';
+import s from './Section.module.scss';
 
 import Note from '../Note';
 import Footer from '../Footer';
@@ -32,10 +32,10 @@ export default function Section() {
   const allTasks = filterTasks(allNotes, filter).map((item) => <Note key={item.id} id={item.id} text={item.text} completed={item.completed} />);
 
   return (
-    <section className="mainContent">
-      <input id="toggle-all" className="toggleAll" type="checkbox" onChange={toggleAll} checked={allNotes.length && allNotes.length === itemsCompleted ? 1 : 0} />
+    <section className={s.mainContent}>
+      <input id="toggle-all" className={s.toggleAll} type="checkbox" onChange={toggleAll} checked={allNotes.length && allNotes.length === itemsCompleted ? 1 : 0} />
       <label htmlFor="toggle-all" />
-      <ul className="todoList">
+      <ul className={s.todoList}>
         {allTasks}
       </ul>
       <Footer />

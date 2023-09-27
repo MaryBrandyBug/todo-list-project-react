@@ -1,26 +1,33 @@
+@import '../../styles/colors.scss';
+@import '../../styles/mixins.scss';
+
 .root {
   position: relative;
 
-  width: 86%;
-  padding: 16px 16px 16px 60px;
+  padding: 16px 16px 16px 30px;
 
   font-family: inherit;
   font-weight: inherit;
   font-style: italic;
   word-break: break-all;
 
-  background: #fff;
+  background-color: #fff;
   border-radius: 10px;
-  border: 1px solid rgba(175, 47, 47, 0.15);
+  box-shadow: inset 0 -1px 5px 0 rgba(0, 0, 0, 0.2);
+  border: 1px solid $ashGrayColor;
 }
 
-li:hover {
+.noteBorder {
+  border: 1px solid $pinkColor;
+  box-shadow: none;
+  padding: 16px 16px 16px 60px;
+}
+
+.root:hover {
   .deleteBtn {
     opacity: 1;
   }
-}
-  
-  
+}  
 
 .toggle {
   position: absolute;
@@ -28,7 +35,7 @@ li:hover {
 
   width: 30px;
   height: 16px;
-  
+
   outline: none;
 }
 
@@ -41,9 +48,9 @@ li:hover {
   width: 27px;
   height: 27px;
   margin: auto 0;
-  margin-bottom: 11px;
 
-  background: url("../../../public/images/removeBtn.png");
+  background-image: url("../../../public/images/removeBtn.png");
+  background-color: transparent;
   background-size: cover;
   border: none;
   opacity: -1;
@@ -64,23 +71,47 @@ li:hover {
   border: none;
 }
 
-.edit:focus {
-  border-bottom: 2px solid rgba(175, 47, 47, 0.15);;
-}
-
 .completed {
-  text-decoration: line-through;
-  color: lightgrey;
+
+  .noteText {
+    text-decoration: line-through;
+    color: $lightGrayColor;
+  }
 }
 
-.label {
+.noteText {
+  max-width: 95%;
+
   cursor: default;
 }
 
-.div {
+.container {
   display: flex;
   align-items: center;
   min-height: 30px;
 
   font-size: 20px;
+}
+
+@include _550 {
+  .root {
+    box-shadow: none;
+    border: 1px solid $pinkColor;
+
+    overflow: scroll;
+  }
+
+  .noteText {
+    max-width: none;
+  }
+
+  .container {
+    max-width: 85%;
+
+    font-size: 18px;
+  }
+
+  .deleteBtn {
+    right: 20px;
+  }
 }

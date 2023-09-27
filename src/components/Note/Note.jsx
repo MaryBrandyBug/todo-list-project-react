@@ -65,19 +65,19 @@ export default function Note({ id, completed, text }) {
   }, [editing]);
 
   return (
-    <li key={id} id={id} className={cx(s.root, { [s.completed]: completed })} onDoubleClick={changeStatusToEdit}>
-      <div className={s.div}>
+    <li key={id} id={id} className={cx(s.root, { [s.completed]: completed, [s.noteBorder]: noteStatus })} onDoubleClick={changeStatusToEdit}>
+      <div className={s.container}>
         {noteStatus
           ? (
             <>
-              <input type="checkbox" className={s.toggle} onChange={toggledNote} checked={completed} />
-              <label htmlFor="noteStatus" className={s.label}>
+              <input className={s.toggle} type="checkbox" onChange={toggledNote} checked={completed} />
+              <p className={s.noteText}>
                 {text}
-              </label>
+              </p>
               <button className={s.deleteBtn} type="button" onClick={removeNote} aria-label="remove-button" />
             </>
           )
-          : <input ref={inputRef} type="text" autoFocus id="edit" className={s.edit} value={editing} onChange={handleInput} onKeyDown={adding} />}
+          : <input className={s.edit} type="text" onChange={handleInput} ref={inputRef} id="edit" value={editing} onKeyDown={adding} />}
       </div>
     </li>
   );

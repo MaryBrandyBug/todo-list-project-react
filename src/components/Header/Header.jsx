@@ -34,8 +34,8 @@ export default function Header() {
   };
 
   return (
-    <header className={s.header}>
-      <h1>todos</h1>
+    <header className={s.root}>
+      <h1 className={s.header}>todos</h1>
       <input
         type="text"
         value={newNote}

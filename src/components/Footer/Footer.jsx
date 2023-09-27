@@ -34,14 +34,14 @@ export default function Footer() {
 
   const buttons = data.map((item) => (
     <li className={cx({ [s.currentLink]: item.id === filter })} key={item.text.length}>
-      <button type="button" onClick={() => changeActive(item.id)}>
+      <button className={s.selector} type="button" onClick={() => changeActive(item.id)}>
         {item.text}
       </button>
     </li>
   ));
 
   return (
-    <footer className={s.footer}>
+    <footer className={s.root}>
       <span className={s.needToDo}>
         <strong>{itemsLeftNumber}</strong>
         {' '}
