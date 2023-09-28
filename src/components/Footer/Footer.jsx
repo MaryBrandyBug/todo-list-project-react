@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import cx from 'classnames';
 import s from './Footer.module.scss';
@@ -9,12 +9,15 @@ import Button from '../Button';
 
 export default function Footer() {
   const dispatch = useDispatch();
+  const [clearBtn, setClearBtn] = useState(false);
   const allNotes = useSelector((state) => state.todos.todos);
   const itemsLeftNumber = allNotes.filter(
     (item) => item.completed === false,
   ).length;
   const itemsDone = allNotes.filter((item) => item.completed === true).length;
   const { filter } = useSelector((state) => state.todos);
+
+  console.log(clearBtn);
 
   const changeActive = (newActive) => {
     switch (newActive) {
@@ -26,6 +29,14 @@ export default function Footer() {
         return dispatch(changeFilter('all'));
     }
   };
+
+  useEffect(() => {
+    if (itemsDone) {
+      setClearBtn(true);
+    } else {
+      setClearBtn(false);
+    }
+  }, [itemsDone]);
 
   const clearCompleted = () => {
     const completedNotes = allNotes
@@ -48,7 +59,7 @@ export default function Footer() {
         items left
       </span>
       <ul className={s.filters}>{buttons}</ul>
-      {itemsDone && <Button className={s.clearCompleted} onClick={clearCompleted} text="Clear completed" />}
+      {clearBtn && <Button className={s.clearCompleted} onClick={clearCompleted} text="Clear completed" />}
     </footer>
   );
 }
