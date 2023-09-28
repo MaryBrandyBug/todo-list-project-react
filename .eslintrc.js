@@ -29,5 +29,6 @@ module.exports = {
     'no-param-reassign': 'off',
     'no-restricted-exports': 'off',
     'react/require-default-props': 'off',
+    'react/button-has-type': 'off',
   },
 };

@@ -6,6 +6,8 @@ import { removeTodo, toggleTodo, changeTodoText } from '../../store/slicer/todoS
 import { checkLength } from '../../modules/utils/utils';
 import s from './Note.module.scss';
 
+import Button from '../Button';
+
 export default function Note({ id, completed, text }) {
   const dispatch = useDispatch();
   const inputRef = useRef(null);
@@ -74,7 +76,7 @@ export default function Note({ id, completed, text }) {
               <p className={s.noteText}>
                 {text}
               </p>
-              <button className={s.deleteBtn} type="button" onClick={removeNote} aria-label="remove-button" />
+              <Button className={s.deleteBtn} onClick={removeNote} ariaLabel="remove-button" />
             </>
           )
           : <input className={s.edit} type="text" onChange={handleInput} ref={inputRef} id="edit" value={editing} onKeyDown={adding} />}

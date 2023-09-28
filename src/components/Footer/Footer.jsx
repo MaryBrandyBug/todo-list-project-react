@@ -5,6 +5,8 @@ import s from './Footer.module.scss';
 import data from './data';
 import { changeFilter, clearAllCompleted } from '../../store/slicer/todoSlicer';
 
+import Button from '../Button';
+
 export default function Footer() {
   const dispatch = useDispatch();
   const allNotes = useSelector((state) => state.todos.todos);
@@ -34,9 +36,7 @@ export default function Footer() {
 
   const buttons = data.map((item) => (
     <li className={cx({ [s.currentLink]: item.id === filter })} key={item.text.length}>
-      <button className={s.selector} type="button" onClick={() => changeActive(item.id)}>
-        {item.text}
-      </button>
+      <Button className={s.selector} onClick={changeActive} cbData={item.id} text={item.text} />
     </li>
   ));
 
@@ -48,15 +48,7 @@ export default function Footer() {
         items left
       </span>
       <ul className={s.filters}>{buttons}</ul>
-      {itemsDone ? (
-        <button
-          type="button"
-          className={s.clearCompleted}
-          onClick={clearCompleted}
-        >
-          Clear completed
-        </button>
-      ) : null}
+      {itemsDone && <Button className={s.clearCompleted} onClick={clearCompleted} text="Clear completed" />}
     </footer>
   );
 }
