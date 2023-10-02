@@ -17,8 +17,6 @@ export default function Footer() {
   const itemsDone = allNotes.filter((item) => item.completed === true).length;
   const { filter } = useSelector((state) => state.todos);
 
-  console.log(clearBtn);
-
   const changeActive = (newActive) => {
     switch (newActive) {
       case 'active':
