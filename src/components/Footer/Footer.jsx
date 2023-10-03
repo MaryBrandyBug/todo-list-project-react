@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import cx from 'classnames';
 import s from './Footer.module.scss';
@@ -14,19 +14,19 @@ export default function Footer() {
   const itemsLeftNumber = allNotes.filter(
     (item) => item.completed === false,
   ).length;
-  const itemsDone = allNotes.filter((item) => item.completed === true).length;
+  const itemsDone = allNotes.filter((item) => item.completed).length;
   const { filter } = useSelector((state) => state.todos);
 
-  console.log(clearBtn);
+  const recordNewFilter = (newFilter) => dispatch(changeFilter(newFilter));
 
   const changeActive = (newActive) => {
     switch (newActive) {
       case 'active':
-        return dispatch(changeFilter('active'));
+        return recordNewFilter('active');
       case 'completed':
-        return dispatch(changeFilter('completed'));
+        return recordNewFilter('completed');
       default:
-        return dispatch(changeFilter('all'));
+        return recordNewFilter('all');
     }
   };
 

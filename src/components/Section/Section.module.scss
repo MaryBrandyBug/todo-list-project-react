@@ -1,5 +1,9 @@
 @import '../../styles/colors.scss';
 
+.mainContent {
+  position: relative;
+}
+
 .todoList {
   margin: 0;
   padding: 0;
@@ -20,7 +24,7 @@
 
 .toggleAll + label {
   position: absolute;
-  top: 14px;
+  top: -50px;
   left: -3px;
 
   width: 60px;
@@ -42,5 +46,5 @@
 }
 
 .toggleAll:checked + label::before {
-  color: darkgrey;
+  color: $ashGrayColor;
 }

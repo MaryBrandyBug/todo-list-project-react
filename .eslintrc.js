@@ -30,5 +30,6 @@ module.exports = {
     'no-restricted-exports': 'off',
     'react/require-default-props': 'off',
     'react/button-has-type': 'off',
+    'react/function-component-definition': 'off',
   },
 };
