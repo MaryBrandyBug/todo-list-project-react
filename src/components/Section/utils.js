@@ -4,5 +4,6 @@ export default function filterTasks(tasks, activeNotes) {
   } if (activeNotes === 'completed') {
     return tasks.filter((item) => item.completed);
   }
+
   return tasks;
 }

@@ -5,5 +5,6 @@ export function checkLength(note) {
       return true;
     }
   }
+
   return false;
 }
