@@ -17,14 +17,16 @@ export default function Footer() {
   const itemsDone = allNotes.filter((item) => item.completed).length;
   const { filter } = useSelector((state) => state.todos);
 
+  const recordNewFilter = (newFilter) => dispatch(changeFilter(newFilter));
+
   const changeActive = (newActive) => {
     switch (newActive) {
       case 'active':
-        return dispatch(changeFilter('active'));
+        return recordNewFilter('active');
       case 'completed':
-        return dispatch(changeFilter('completed'));
+        return recordNewFilter('completed');
       default:
-        return dispatch(changeFilter('all'));
+        return recordNewFilter('all');
     }
   };
 
