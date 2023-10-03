@@ -61,6 +61,7 @@ export default function Note({ id, completed, text }) {
       }
     };
     window.addEventListener('click', handleClick);
+
     return () => {
       window.removeEventListener('click', handleClick);
     };
